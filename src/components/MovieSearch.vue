@@ -42,7 +42,7 @@ const searchMovies = debounce(async () => {
     }
     loading.value = true;
     try {
-        const response = await fetch(`http://www.omdbapi.com/?s=${searchQuery.value}&apikey=${import.meta.env.VITE_OMDB_API_KEY}`);
+        const response = await fetch(`https://www.omdbapi.com/?s=${searchQuery.value}&apikey=${import.meta.env.VITE_OMDB_API_KEY}`);
         const data = await response.json();
         movies.value = data.Search || [];
     } catch (error) {
